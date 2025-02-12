@@ -1,0 +1,15 @@
+<.header>
+  Edit Ingredient detail {@ingredient.name}
+  <:subtitle>Use this form to manage ingredient_detail records in your database.</:subtitle>
+</.header>
+
+<.ingredient_detail_form
+  changeset={@changeset}
+  units={@units}
+  ingredient={@ingredient}
+  action={~p"/ingredients_details/#{@ingredient_detail}"}
+/>
+
+<.back navigate={~p"/ingredients/#{@ingredient_detail.ingredient_id}"}>
+  Back to
+</.back>

@@ -1,0 +1,12 @@
+<.header>
+  New Ingredient detail for: {@ingredient.name}
+</.header>
+
+<.ingredient_detail_form
+  changeset={@changeset}
+  ingredient={@ingredient}
+  units={@units}
+  action={~p"/ingredients_details"}
+/>
+
+<.back navigate={~p"/ingredients/#{@ingredient.id}"}>Back to</.back>

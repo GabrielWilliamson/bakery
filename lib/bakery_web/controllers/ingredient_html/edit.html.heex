@@ -1,0 +1,8 @@
+<.header>
+  Edit Ingredient {@ingredient.id}
+  <:subtitle>Use this form to manage ingredient records in your database.</:subtitle>
+</.header>
+
+<.ingredient_form changeset={@changeset} units={@units} action={~p"/ingredients/#{@ingredient}"} />
+
+<.back navigate={~p"/ingredients"}>Back to ingredients</.back>

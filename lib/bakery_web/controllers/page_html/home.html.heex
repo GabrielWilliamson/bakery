@@ -1,0 +1,33 @@
+<.flash_group flash={@flash} />
+<div class="left-[40rem] fixed inset-y-0 right-0 z-0 hidden lg:block xl:left-[50rem]"></div>
+<div class="px-4 py-10 sm:px-6 sm:py-28 lg:px-8 xl:px-28 xl:py-32">
+  <div class="mx-auto max-w-xl lg:mx-0">
+    <h1 class="text-brand mt-10 flex items-center text-sm font-bold leading-6">
+      <small class="bg-brand/5 text-2xl ml-3 rounded-full p-3 font-medium leading-6">
+        Bakery
+      </small>
+    </h1>
+    <p class="text-[2rem] mt-4 font-semibold leading-10 tracking-tighter text-zinc-900 text-balance">
+      text
+    </p>
+    <p class="mt-4 text-base leading-7 text-zinc-600">
+      another text
+    </p>
+
+    <div class="flex space-x-4">
+      <.link
+        href={~p"/users/register"}
+        class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+      >
+        Register
+      </.link>
+
+      <.link
+        href={~p"/users/log_in"}
+        class="text-[0.8125rem] leading-6 text-zinc-900 font-semibold hover:text-zinc-700"
+      >
+        Log in
+      </.link>
+    </div>
+  </div>
+</div>

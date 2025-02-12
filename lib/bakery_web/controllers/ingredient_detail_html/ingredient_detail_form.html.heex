@@ -1,0 +1,17 @@
+<.simple_form :let={f} for={@changeset} action={@action}>
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+
+  <.input field={f[:ingredient_id]} value={@changeset.data.ingredient_id} type="text" label="Ingrendient" />
+
+  <.input
+    field={f[:unit_id]}
+    type="select"
+    label="Unit"
+    options={Enum.map(@units, &{&1.label, &1.id})}
+  />
+  <:actions>
+    <.button>Save Ingredient detail</.button>
+  </:actions>
+</.simple_form>

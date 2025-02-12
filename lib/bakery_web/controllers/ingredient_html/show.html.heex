@@ -1,0 +1,50 @@
+<.header>
+  <div class="flex w-full justify-between mb-3">
+    <p>Ingredient Detail</p>
+    <.link href={~p"/ingredients/#{@ingredient.id}/edit"}>
+      <.button>Edit ingredient</.button>
+    </.link>
+  </div>
+  <div class="flex justify-center p-4 space-x-10  bg-brand/5  rounded-lg">
+    <div>
+      <p class="font-semibold text-sm">Ingredient:</p>
+      <p class="ml-4 text-2xl font-semibold text-brand">{@ingredient.name}</p>
+    </div>
+    <div>
+      <p class="font-semibold text-sm">Unit:</p>
+      <p class="ml-4 text-2xl font-semibold text-brand ">{@ingredient.short}</p>
+    </div>
+    <div>
+      <p class="font-semibold text-sm">Price:</p>
+      <p class="ml-4 text-2xl font-semibold text-brand ">{@ingredient.price}</p>
+    </div>
+  </div>
+</.header>
+
+<div class="flex justify-between mt-10">
+  <p>Details</p>
+
+  <.link href={~p"/ingredients_details/new/#{@ingredient.id}"}>
+    <.button>Add ingredient detail</.button>
+  </.link>
+</div>
+
+<.table id={"details-#{@ingredient.id}"} rows={@details}>
+  <:col :let={detail} label="Unit">
+    {detail.short}
+  </:col>
+  <:col :let={detail} label="Price">
+    {detail.price |> Decimal.round(2)}
+  </:col>
+
+  <%!-- <:action :let={ingredient}>
+    <.link navigate={~p"/ingredients/#{ingredient.id}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={ingredient}>
+    <.link href={~p"/ingredients/#{ingredient.id}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action> --%>
+</.table>
+
+<.back navigate={~p"/ingredients"}>Back to ingredients</.back>

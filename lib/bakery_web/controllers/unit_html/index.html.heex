@@ -1,0 +1,8 @@
+<.header>
+  Listing Units
+</.header>
+
+<.table id="units" rows={@units}>
+  <:col :let={unit} label="Name">{unit.name}</:col>
+  <:col :let={unit} label="Short">{unit.short}</:col>
+</.table>

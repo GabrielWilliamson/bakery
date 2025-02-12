@@ -1,0 +1,29 @@
+<.header>
+  Listing Ingredients
+  <:actions>
+    <.link href={~p"/ingredients/new"}>
+      <.button>New Ingredient</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="ingredients" rows={@ingredients} row_click={&JS.navigate(~p"/ingredients/#{&1.id}")}>
+  <:col :let={ingredient} label="Name">
+    {ingredient.name}
+  </:col>
+  <:col :let={ingredient} label="Unit">
+    {ingredient.unit_name}
+  </:col>
+  <:col :let={ingredient} label="Price">
+    {ingredient.price |> Decimal.round(2)}
+  </:col>
+
+  <:action :let={ingredient}>
+    <.link navigate={~p"/ingredients/#{ingredient.id}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={ingredient}>
+    <.link href={~p"/ingredients/#{ingredient.id}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

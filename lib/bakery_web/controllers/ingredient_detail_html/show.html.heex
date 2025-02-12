@@ -1,0 +1,17 @@
+<.header>
+  Ingredient detail {@ingredient_detail.id}
+  <:subtitle>This is a ingredient_detail record from your database.</:subtitle>
+  <:subtitle>Ingredient Name {@ingredient.name}</:subtitle>
+
+  <:actions>
+    <.link href={~p"/ingredients_details/#{@ingredient_detail}/edit"}>
+      <.button>Edit ingredient_detail</.button>
+    </.link>
+  </:actions>
+</.header>  
+
+<.list>
+  <:item title="Price">{@ingredient_detail.price}</:item>
+</.list>
+
+<.back navigate={~p"/ingredients_details"}>Back to ingredients_details</.back>
